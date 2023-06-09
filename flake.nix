@@ -13,6 +13,6 @@
         pnpm2nix = (import ./default.nix { inherit pkgs; });
       in
       {
-        inherit (pnpm2nix) mkPnpmPackage mkPnpmEnv;
+        inherit (pnpm2nix) mkPnpmPackage mkPnpmEnv defaultPnpmOverrides;
       });
 }
