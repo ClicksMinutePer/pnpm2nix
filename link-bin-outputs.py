@@ -22,7 +22,7 @@ def get_bin_attr_files(package_json):
         return tuple()
     else:
         if isinstance(bins, str):
-            return ((package_json['name'], bins),)
+            return ((os.path.basename(package_json['name']), bins),)
         else:
             return bins.items()
 
