@@ -66,7 +66,8 @@ in {
       '';
     });
   in makeSetupHook {
-    deps = envDrv.buildInputs ++ envDrv.propagatedBuildInputs;
+    name = "pnpm-env-hook";
+    propagatedBuildInputs = envDrv.buildInputs ++ envDrv.propagatedBuildInputs;
   } (writeScript "pnpm-env-hook.sh" ''
     export NODE_PATH=${lib.getLib envDrv}/node_modules
   '');
