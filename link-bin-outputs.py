@@ -56,6 +56,7 @@ if __name__ == '__main__':
                 get_bin_attr_files(package_json),
                 get_directories_bin_attr_files(args.lib_out, package_json))):
 
+        os.makedirs(os.path.dirname(fout), exist_ok=True)  # Allows for things like @mapbox/node-pre-gyp
         os.symlink(fin, fout)
         os.chmod(fout, 0o755)
 
